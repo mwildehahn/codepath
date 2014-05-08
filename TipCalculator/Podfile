@@ -1,0 +1,4 @@
+link_with 'TipCalculator', 'TipCalculatorTests'
+platform :ios
+
+pod 'OCMock', '~> 2.2.4'
