@@ -14,5 +14,7 @@ UI Additions
 
 Experiments
 -----------
+- CocoaPods
 - XCTestCase
-- OCMock
+- OCMock (seems like using this with CocoaPods makes it so this can't be opened
+  as a project, but only a workspace?)
