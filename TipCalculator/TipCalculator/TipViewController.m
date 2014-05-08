@@ -6,26 +6,11 @@
 //  Copyright (c) 2014 Michael Hahn. All rights reserved.
 //
 
+#import "TipCalculator.h"
 #import "TipViewController.h"
+#import "TipViewController_Private.h"
 #import "SettingsViewController.h"
 #import "Constants.h"
-
-@interface TipViewController () {
-    NSUserDefaults *defaults;
-}
-
-@property (weak, nonatomic) IBOutlet UITextField *billTextField;
-@property (weak, nonatomic) IBOutlet UILabel *tipLabel;
-@property (weak, nonatomic) IBOutlet UILabel *totalLabel;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *tipControl;
-
-- (IBAction)onTap:(id)sender;
-
-- (void)activateBillTextField;
-- (void)onSettingsButton;
-- (void)updateValues;
-
-@end
 
 @implementation TipViewController
 
@@ -91,8 +76,10 @@
 - (void)updateValues {
     float billAmount = [self.billTextField.text floatValue];
     
-    float tipAmount = billAmount * TIP_SELECTIONS[self.tipControl.selectedSegmentIndex];
-    float totalAmount = tipAmount + billAmount;
+    float tipAmount = [TipCalculator calculateTip:billAmount withTipPercent:TIP_SELECTIONS[self.tipControl.selectedSegmentIndex]];
+    
+    float totalAmount = [TipCalculator calculateTotal:billAmount
+                                       withTip:tipAmount];
     
     self.tipLabel.text = [NSString stringWithFormat:@"$%0.2f", tipAmount];
     self.totalLabel.text = [NSString stringWithFormat:@"$%0.2f", totalAmount];
