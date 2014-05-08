@@ -17,5 +17,6 @@
 @property (nonatomic) id mockTipLabel;
 @property (nonatomic) id mockTotalLabel;
 @property (nonatomic) id mockTipControl;
+@property (nonatomic) id mockTipPercentLabel;
 
 @end

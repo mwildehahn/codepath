@@ -9,6 +9,7 @@
                 <outlet property="billTextField" destination="sQY-m1-Izr" id="D1r-tR-sgY"/>
                 <outlet property="tipControl" destination="DXm-ml-nLs" id="LOU-Cg-aFl"/>
                 <outlet property="tipLabel" destination="gwt-Nf-tho" id="nZH-Lh-GjU"/>
+                <outlet property="tipPercentLabel" destination="5Vd-6y-PB3" id="89G-OY-8NG"/>
                 <outlet property="totalLabel" destination="7aq-0B-8X4" id="Wv5-ne-sY0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -82,10 +83,21 @@
                         <action selector="onTap:" destination="-1" eventType="valueChanged" id="sx1-IV-SHI"/>
                     </connections>
                 </segmentedControl>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(20%)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vd-6y-PB3">
+                    <rect key="frame" x="117" y="148" width="54" height="16"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="zDU-2L-rlD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.0039215688593685627" green="0.55686277151107788" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <gestureRecognizers/>
             <constraints>
+                <constraint firstItem="qiq-DA-stS" firstAttribute="top" secondItem="5Vd-6y-PB3" secondAttribute="bottom" constant="10" id="0Az-aQ-WZN"/>
                 <constraint firstItem="WEL-Jz-2ee" firstAttribute="leading" secondItem="zu1-jv-waY" secondAttribute="leading" id="0hE-zw-iD3"/>
                 <constraint firstItem="qiq-DA-stS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="9" id="4A8-Us-zJ7"/>
                 <constraint firstItem="gwt-Nf-tho" firstAttribute="trailing" secondItem="7aq-0B-8X4" secondAttribute="trailing" id="5X3-hF-nZ3"/>
@@ -102,6 +114,8 @@
                 <constraint firstItem="7aq-0B-8X4" firstAttribute="leading" secondItem="zu1-jv-waY" secondAttribute="trailing" constant="38" id="Njb-6Q-MDk"/>
                 <constraint firstItem="zu1-jv-waY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="196" id="Oxv-Ss-3ol"/>
                 <constraint firstItem="zu1-jv-waY" firstAttribute="trailing" secondItem="WEL-Jz-2ee" secondAttribute="trailing" id="UoG-g1-QRC"/>
+                <constraint firstItem="gwt-Nf-tho" firstAttribute="leading" secondItem="5Vd-6y-PB3" secondAttribute="trailing" constant="24" id="VFW-R2-f1F"/>
+                <constraint firstItem="5Vd-6y-PB3" firstAttribute="leading" secondItem="WEL-Jz-2ee" secondAttribute="trailing" constant="8" symbolic="YES" id="aE8-nf-BZM"/>
                 <constraint firstItem="zu1-jv-waY" firstAttribute="top" secondItem="7aq-0B-8X4" secondAttribute="top" id="jCY-0h-EUc"/>
                 <constraint firstItem="Qld-M7-dxz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="jHh-Mh-Cca"/>
                 <constraint firstItem="sQY-m1-Izr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="86" id="ke6-yl-UH8"/>

@@ -81,14 +81,15 @@
 - (void)updateValues {
     float billAmount = [self.billTextField.text floatValue];
     
-    float tipAmount = [TipCalculator calculateTip:billAmount withTipPercent:TIP_SELECTIONS[self.tipControl.selectedSegmentIndex]];
+    float tipAmount = [TipCalculator calculateTip:billAmount
+                                   withTipPercent:TIP_SELECTIONS[self.tipControl.selectedSegmentIndex]];
     
     float totalAmount = [TipCalculator calculateTotal:billAmount
-                                       withTip:tipAmount];
-    
+                                              withTip:tipAmount];
+
+    self.tipPercentLabel.text = [[NSString alloc]initWithFormat:@"(%@)", [self.tipControl titleForSegmentAtIndex:self.tipControl.selectedSegmentIndex]];
     self.tipLabel.text = [NSString stringWithFormat:@"$%0.2f", tipAmount];
     self.totalLabel.text = [NSString stringWithFormat:@"$%0.2f", totalAmount];
-    
 }
 
 - (void)onSettingsButton {
