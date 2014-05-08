@@ -41,6 +41,11 @@
                                              selector:@selector(activateBillTextField)
                                                  name:UIApplicationDidBecomeActiveNotification
                                                object:nil];
+    
+    // update our totals as the user types in the bill total
+    [self.billTextField addTarget:self
+                           action:@selector(updateValues)
+                 forControlEvents:UIControlEventEditingChanged];
 
 }
 
